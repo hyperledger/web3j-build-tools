@@ -1,8 +1,6 @@
 
 apply {
     from("https://raw.githubusercontent.com/web3j/build-tools/master/gradle/spotless/build.gradle")
-}
-
-apply {
     from("https://raw.githubusercontent.com/web3j/build-tools/master/gradle/jacoco/build.gradle")
+    from("https://raw.githubusercontent.com/web3j/build-tools/master/gradle/java/build.gradle")
 }
