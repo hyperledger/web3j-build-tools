@@ -4,4 +4,4 @@ plugins {
 }
 
 
-apply { from("$rootDir/gradle/spotless/build.gradle") }
+apply { from("$rootDir/gradle/build.gradle") }

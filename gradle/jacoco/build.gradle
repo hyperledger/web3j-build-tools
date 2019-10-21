@@ -1,0 +1,33 @@
+apply plugin: 'jacoco'
+
+task jacocoRootTestReport(type: org.gradle.testing.jacoco.tasks.JacocoReport) {
+    dependsOn = subprojects.test
+    additionalSourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs)
+    sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
+    classDirectories = files(subprojects.sourceSets.main.output)
+    executionData = files(subprojects.jacocoTestReport.executionData)
+    reports { xml.enabled = true }
+
+    onlyIf = { true }
+
+    doFirst {
+        executionData = files(executionData.findAll { it.exists() })
+    }
+
+    afterEvaluate {
+        classDirectories = files(classDirectories.files.collect {
+            fileTree(dir: it,
+                    exclude: [
+                            'org/web3j/**/generated/**',
+                    ])
+        })
+    }
+}
+
+jacoco {
+    toolVersion = '0.7.7.201606060606' // See http://www.eclemma.org/jacoco/.
+}
+
+jacocoTestReport {
+    reports { xml.enabled true }
+}
