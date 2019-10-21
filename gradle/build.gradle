@@ -1,7 +1,7 @@
 
 apply {
     ['jacoco', 'java', 'javadoc', 'repositories','spotless'].each {
-        if(new File("$rootDir/gradle/$it").exists()){
+        if(new File("$rootDir/gradle/$it/build.gradle").exists()){
             from("$rootDir/gradle/$it/build.gradle")
         } else {
             from("https://raw.githubusercontent.com/web3j/build-tools/master/gradle/$it/build.gradle")
