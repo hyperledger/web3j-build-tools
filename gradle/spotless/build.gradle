@@ -36,4 +36,4 @@ spotless {
     }
 }
 
-build.dependsOn 'downloadJavaLicense'
+build.dependsOn('downloadJavaLicense', 'downloadFormatterProperties')
