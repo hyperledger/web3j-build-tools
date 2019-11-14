@@ -1,7 +1,6 @@
 apply plugin: 'jacoco'
 
 task jacocoRootTestReport(type: JacocoReport) {
-    additionalSourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs)
     reports { xml.enabled = true }
 }
 

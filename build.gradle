@@ -6,5 +6,9 @@ plugins {
 
 apply plugin: 'jacoco'
 
-apply { from("$rootDir/gradle/build.gradle") }
 
+apply {
+    ['jacoco', 'java', 'javadoc', 'repositories', 'spotless', 'publish'].each {
+        from("$rootDir/gradle/$it/build.gradle")
+    }
+}
