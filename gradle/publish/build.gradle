@@ -41,6 +41,17 @@ publishing {
                         url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
                     }
                 }
+                
+                scm {
+                    def slug = project.name
+                    if(project.hasProperty('scmSlug')) {
+                        slug = project.scmSlug
+                    }
+
+                    url = "https://github.com/web3j/$slug"
+                    connection = "scm:https://github.com/web3j/${slug}.git"
+                    developerConnection = "scm:git://github.com/web3j/${slug}.git"
+                }
 
                 developers {
                     developer {
