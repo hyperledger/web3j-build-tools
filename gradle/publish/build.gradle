@@ -80,6 +80,13 @@ nexusPublishing {
     }
 }
 
+
+nexusStaging {
+    username System.getenv('OSSRH_USERNAME')
+    password System.getenv('OSSRH_PASSWORD')
+}
+
+
 signing {
     sign publishing.publications.maven
     def signingKey = new File("$rootDir/web3j.asc")
