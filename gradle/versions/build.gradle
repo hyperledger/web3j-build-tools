@@ -9,5 +9,5 @@ ext {
         }
         props
     }
-    versions = loadPropsFromFile("../versions.properties")
+    versions = loadPropsFromFile('versions.properties')
 }
