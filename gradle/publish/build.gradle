@@ -85,7 +85,5 @@ nexusStaging {
 signing {
     sign publishing.publications.maven
     gpgSecretKey System.getenv('OSSRH_GPG_SECRET_KEY')
-    if (signingKey.exists()) {
-        useInMemoryPgpKeys(gpgSecretKey, System.getenv('OSSRH_GPG_SECRET_KEY_PASSWORD'))
-    }
+    useInMemoryPgpKeys(gpgSecretKey, System.getenv('OSSRH_GPG_SECRET_KEY_PASSWORD'))
 }
