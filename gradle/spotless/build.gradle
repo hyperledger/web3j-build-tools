@@ -26,7 +26,7 @@ spotless {
             exclude '**/build/install/**'
         }
         removeUnusedImports()
-        googleJavaFormat('1.10.0').aosp()
+        googleJavaFormat('1.17.0').aosp()
         importOrder 'java', '', 'org.web3j', '\\#'
         trimTrailingWhitespace()
         endWithNewline()
